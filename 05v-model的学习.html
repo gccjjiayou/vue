@@ -6,19 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
 </head>
 <body>
   <div id="app">
-    <p>{{msg}}</p>
+    <h4>{{ msg }}</h4>
+    <!-- <input type="text" :value="msg" style="width: 100%;"> -->
+    <input type="text" v-model="msg" style="width: 100%;">
   </div>
   <script>
     var vm = new Vue({
       el: '#app',
       data: {
-        msg: '欢迎学习vue'
-      }
+        msg: '大家都是好学生'
+      },
+      methods: {}
     })
   </script>
-  
 </body>
 </html>

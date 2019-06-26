@@ -9,16 +9,21 @@
 </head>
 <body>
   <div id="app">
-    <p>{{msg}}</p>
+    <ul>
+      <li v-for="(val, key, index) in user">索引：{{index}}——键：{{key}}——值：{{val}}</li>
+    </ul>
   </div>
   <script>
     var vm = new Vue({
       el: '#app',
       data: {
-        msg: '欢迎学习vue'
+        user: {
+          id: 1,
+          name: 'zs',
+          gender: 'man'
+        }
       }
     })
   </script>
-  
 </body>
 </html>

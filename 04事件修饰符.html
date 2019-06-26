@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <style>
+    /* #app > div {
+      background-color: aquamarine;
+      height: 150px;
+    } */
+    .inner {
+      background-color: green;
+      border: 2px solid green;
+      height: 150px; 
+    }
+    .outer {
+      background-color: red;
+      border: 2px solid red;
+      padding: 40px;
+      /* height: 300px; */
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- <div @click.capture="divHandler">
+      <input type="button" value="戳它" @click="btnHandler">
+    </div> -->
+    <!-- <a href="http://www.baidu.com" @click.prevent.once="linkClick">点击链接</a> -->
+    <div class="outer" @click="div2Handler">
+      <div class="inner" @click="div1Handler">
+        <input type="button" value="戳它" @click="btnHandler">
+      </div>
+    </div>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {},
+      methods: {
+        div1Handler() {
+          console.log('这是inner的点击事件')
+        },
+        btnHandler() {
+          console.log('这是btn的点击事件')
+        },
+        linkClick() {
+          console.log('点击链接')
+        },
+        div2Handler() {
+          console.log('这是outer的点击事件')
+        }
+      }
+    })
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <style>
+    .red {
+      color: red;
+    }
+    .thin {
+      font-weight: 200;
+    }
+    .italic {
+      font-style: italic;
+    }
+    .active {
+      letter-spacing: 0.5em;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="app">
+    <h1 :class="['red', 'thin']">这是一个很大很大的h1，大到你无法想象</h1>
+    <h1 :class="['red', 'thin', isActive? 'active' : '']">这是一个很大很大的h1，大到你无法想象</h1>
+    <h1 :class="['red', 'thin', {active: isActive}]">这是一个很大很大的h1，大到你无法想象</h1>
+    <h1 :class="{red: true, thin: true, active: isActive}">这是一个很大很大的h1，大到你无法想象</h1>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        isActive: true,
+      },
+      methods: {}
+    })
+  </script>
+</body>
+</html>

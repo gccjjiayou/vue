@@ -9,16 +9,24 @@
 </head>
 <body>
   <div id="app">
-    <p>{{msg}}</p>
+    <input type="button" value="切换" @click="flag=!flag">
+    <h3 v-if="flag">用v-if控制元素</h3>
+    <h3 v-show="flag">用v-show控制元素</h3>
+    <!-- <div style="width: 100px; height: 100px; background-color: red;"></div>
+    <div style="width: 100px; height: 100px; background-color: green;"></div> -->
   </div>
   <script>
     var vm = new Vue({
       el: '#app',
       data: {
-        msg: '欢迎学习vue'
+        flag: true,
+      },
+      methods: {
+        toggle() {
+          this.flag = !this.flag
+        }
       }
     })
   </script>
-  
 </body>
 </html>

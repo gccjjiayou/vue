@@ -9,14 +9,13 @@
 </head>
 <body>
   <div id="app">
-    <p>{{msg}}</p>
+      <p v-for="count in 10">{{count}}</p>
   </div>
   <script>
     var vm = new Vue({
       el: '#app',
-      data: {
-        msg: '欢迎学习vue'
-      }
+      data: {},
+      methods: {}
     })
   </script>
   
