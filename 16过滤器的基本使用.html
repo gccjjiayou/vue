@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <link rel="stylesheet" href="./lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div id="app">
+    <p>{{ msg | msgopt}}</p>
+  </div>
+  <script>
+    Vue.filter('msgopt', function(data) {
+      return data.replace(/单纯/g, '邪恶')
+    })
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '曾经的我也是一个单纯的少年，单纯的我，傻傻的问，谁是世界上最单纯的人'
+      },
+      methods: {
+      }
+    })
+  </script>
+</body>
+
+</html>

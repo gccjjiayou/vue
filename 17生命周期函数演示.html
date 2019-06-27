@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <link rel="stylesheet" href="./lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+
+<body>
+  <div id="app">
+    <h3 id="h3">{{msg}}</h3>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'msg的内容'
+      },
+      methods: {
+        show() {
+          console.log('show方法被执行')
+        }
+      },
+      // beforeCreate() {
+      //   console.log(this.msg)
+      //   this.show()
+      // },
+      created() {
+        console.log(this.msg)
+        this.show()
+      }
+    })
+    
+  </script>
+</body>
+
+</html>
